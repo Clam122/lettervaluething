@@ -59,12 +59,14 @@ fn calc_word_value_loop() {
     }
 }
 
+
 fn generate_list_of_words() -> HashMap<String, i32> {
     //Generate hashmap
     let mut returnhash: HashMap<String, i32> = HashMap::new();
     
     //read file named words.txt
     let contents = fs::read_to_string("./words.txt").expect("Something went wrong with reading the wordlist file!");
+    println!("Generating word list hashmap, this may take some time!");
     for s in contents.lines() {
         let real_str: String = String::from(s);
         let hashmap = create_hash_map(String::from("abcdefghijklmnopqrstuvwxyz"));
